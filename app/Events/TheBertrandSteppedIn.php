@@ -9,6 +9,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use App\User;
 
 // As you can see, this event class contains no logic. It is simply a container for the Bertrand "User" instance that just stepped in.
 class TheBertrandSteppedIn

@@ -31,11 +31,10 @@ class SecurityGuard
      */
     public function handle(TheBertrandSteppedIn $event)
     {
+		sleep(10);
         $user = $event->user;
 		$id = $user->id;
-		$now = Carbon::now();
-		sleep(10);
-		$logMessage = "Non Queued event: User with ID: $id gave his autograph to the guard and finished at " . $now;
+		$logMessage = "Non Queued event: User with ID: $id gave his autograph to the guard.";
 		Log::info($logMessage);
     }
 }

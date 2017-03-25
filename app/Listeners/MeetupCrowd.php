@@ -28,11 +28,10 @@ class MeetupCrowd
      */
     public function handle(TheBertrandSteppedIn $event)
     {
-        $user = $event->user;
-		$id = $user->id;
-		$now = Carbon::now();
 		sleep(10);
-		$logMessage = "Non Queued event: User with ID: $id flocked by the Meetup Crowd except me.  And they were finished with him at " . $now;
+        $user = $event->user;
+		$id = $user->id;		
+		$logMessage = "Non Queued event: User with ID: $id flocked by the Meetup Crowd except me.  And they were very happy with him.";
 		Log::info($logMessage);
     }
 }
