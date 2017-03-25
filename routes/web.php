@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('', '');
+Route::get('/eventsTesting', 
+           'EventsTestingController@eventsTesting'
+		  );
