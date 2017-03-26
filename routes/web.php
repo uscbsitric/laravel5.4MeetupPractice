@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('/eventsTesting', 
            'EventsTestingController@eventsTesting'
 		  );
+Route::get('/eventsSubscriberTesting',
+           'EventsTestingController@eventsSubscriberTesting'
+          );
