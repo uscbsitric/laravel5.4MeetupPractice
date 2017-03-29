@@ -22,5 +22,5 @@ Route::get('/eventsSubscriberTesting',
            'EventsTestingController@eventsSubscriberTesting'
           );
 Route::get('/queueTesting',
-           'QueueTestingController@queueTesting'
+           'QueueTestController@queueTesting'
 		  );
