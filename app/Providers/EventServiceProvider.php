@@ -15,7 +15,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = ['App\Events\TheBertrandSteppedIn' => ['App\Listeners\SecurityGuard',
 	                                                           'App\Listeners\MeetupCrowd'
                                                               ],
-			             'App\Events\LaravelMeetupPresentation' => ['App\Listener\PresentationProcessor']
+			             'App\Events\LaravelMeetupPresentation' => ['App\Listeners\PresentationProcessor']
                         ];
 
     protected $subscribe = ['App\Listeners\Number1Fan'];

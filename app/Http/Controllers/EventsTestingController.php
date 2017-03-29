@@ -9,6 +9,7 @@ use Event;
 use App\Events\TheBertrandSteppedIn;
 use App\Events\FredzIsNowShowing;
 use App\Events\DorylHasArrived;
+use App\Events\LaravelMeetupPresentation;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 
@@ -34,6 +35,13 @@ class EventsTestingController extends Controller
     Event::fire(new FredzIsNowShowing($user));
 	Event::fire(new DorylHasArrived($user));
 	
+	echo "Check the logs for details";
+  }
+  
+  public function queuedEvent()
+  {
+    $user = User::find(1);
+	Event::fire(new LaravelMeetupPresentation($user));
 	echo "Check the logs for details";
   }
 }

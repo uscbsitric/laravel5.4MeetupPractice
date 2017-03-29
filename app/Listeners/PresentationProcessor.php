@@ -5,8 +5,9 @@ namespace App\Listeners;
 use App\Events\LaravelMeetupPresentation;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Log;
 
-class PresentationProcessor
+class PresentationProcessor implements ShouldQueue
 {
     /**
      * Create the event listener.
