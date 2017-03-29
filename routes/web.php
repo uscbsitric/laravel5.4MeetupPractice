@@ -24,3 +24,6 @@ Route::get('/eventsSubscriberTesting',
 Route::get('/queueTesting',
            'QueueTestController@queueTesting'
 		  );
+Route::get('/queuedEvent',
+           'EventsTestingController@queuedEvent'
+		  );
