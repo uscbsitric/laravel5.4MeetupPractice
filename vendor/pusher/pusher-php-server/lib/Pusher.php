@@ -21,6 +21,8 @@
         + Simaranjit Singh (simaranjit.singh@virdi.me)
 */
 
+use Illuminate\Support\Facades\Log;
+
 class PusherException extends Exception
 {
 }
@@ -34,6 +36,9 @@ class PusherInstance
 
     private function __construct()
     {
+	  $this->app_id = env('PUSHER_APP_ID');
+	  $this->secret = env('PUSHER_APP_SECRET');
+	  $this->api_key = env('PUSHER_APP_KEY');
     }
 
     private function __clone()
@@ -96,6 +101,9 @@ class Pusher
      */
     public function __construct($auth_key, $secret, $app_id, $options = array(), $host = null, $port = null, $timeout = null)
     {
+	    $options['cluster'] = env('PUSHER_API_CLUSTER', 'ap1');
+		$options['encrypted'] = true;
+
         $this->check_compatibility();
 
         /* Start backward compatibility with old constructor **/
@@ -488,6 +496,9 @@ class Pusher
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_value);
 
         $response = $this->exec_curl($ch);
+		
+		Log::info('Pusher response status: ' . $response['status']);
+		Log::info('Pusher response body: ' . $response['body']);
 
         if ($response['status'] === 200 && $debug === false) {
             return true;

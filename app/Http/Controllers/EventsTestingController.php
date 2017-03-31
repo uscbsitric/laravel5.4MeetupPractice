@@ -49,6 +49,7 @@ class EventsTestingController extends Controller
   public function publicEventForBroadcast()
   {
     $user = User::find(1);
-	event( new SomethingHappened() );
+	event( new SomethingHappened($user) );
+	echo 'notification sent';
   }
 }
