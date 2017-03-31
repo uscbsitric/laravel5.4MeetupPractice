@@ -10,6 +10,7 @@ use App\Events\TheBertrandSteppedIn;
 use App\Events\FredzIsNowShowing;
 use App\Events\DorylHasArrived;
 use App\Events\LaravelMeetupPresentation;
+use App\Events\SomethingHappened;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 
@@ -43,5 +44,11 @@ class EventsTestingController extends Controller
     $user = User::find(1);
 	Event::fire(new LaravelMeetupPresentation($user));
 	echo "Check the logs for details";
+  }
+  
+  public function publicEventForBroadcast()
+  {
+    $user = User::find(1);
+	event( new SomethingHappened() );
   }
 }
